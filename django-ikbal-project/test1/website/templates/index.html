@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+        background: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        }
+
+        .heading{
+        color: lightgreen;
+        }
+
+        .subheading{
+        color: lightyellow;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1 class="heading">Вы получили страницу в {{ time }}</h1>
+<h2 class="subheading">А ваше случайное число на сегодня: {{randnum}}</h2>
+
+{% if minutes|divisibleby:2 %}
+    <style>
+      body {
+        background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5298bac0-b8bf-4c80-af67-725c1272dbb0/dhfecj5-5d20a71b-a3cc-4254-be37-91856fe3034a.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyOThiYWMwLWI4YmYtNGM4MC1hZjY3LTcyNWMxMjcyZGJiMFwvZGhmZWNqNS01ZDIwYTcxYi1hM2NjLTQyNTQtYmUzNy05MTg1NmZlMzAzNGEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gIvROXrRcM5IGEJaNw3I9MT-4RWiI3YFcFgVhW20ds0');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
+  {% else %}
+    <style>
+      body {
+        background-image: url('https://wallpapercat.com/w/full/f/4/f/453197-3000x2015-desktop-hd-p-diddy-sean-combs-wallpaper-image.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
+  {% endif %}
+
+<ul>
+    {% for i in fruits%}
+    <li>{{ i }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
